@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Поиск по слову</title>
+    <link rel="stylesheet" href="../../static/styles/style.css">
+</head>
+<body>
+
+<main>
+
+    <H1>{{ title }}</H1>
+
+    <form action="/search" method="get">
+        <p class="color_word">По вхождению <span>любого</span> слова</p>
+        <input type="text" name="s" placeholder="Введите слово" required>
+        <button type="submit">Отправить</button>
+    </form>
+
+    <hr>
+    <a href="/post" class="button">Добавить пост</a>
+
+</main>
+</body>
+</html>

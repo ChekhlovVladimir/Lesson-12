@@ -1,0 +1,92 @@
+/* Селекторы по тегам */
+h1 {
+    color:red;
+}
+body {
+    font-family: arial;
+    font-size: 18px;
+}
+
+main {
+    margin: 32px auto;
+    width: 350px;
+}
+
+hr {
+    margin: 32px 0;
+}
+
+select {
+    padding: 7px 6px;
+    background-color: #ddd;
+    border:none;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+input[type=text] {
+    padding: 8px;
+    position: relative;
+    top: -2px;
+}
+
+textarea {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+input[type=file] {
+    margin-bottom: 16px;
+}
+
+a {
+    color: black;
+    font-size: 16px;
+}
+
+
+/* Селекторы по классам */
+
+.button {
+    background-color: #ddd;
+    padding: 8px 16px;
+    text-decoration: none;
+    color: black;
+    border:none;
+    border-radius: 4px;
+    font-size: 18px;
+}
+.link:hover {
+    font-size: 15px;
+    color:rgb(116, 68, 14)
+}
+.truncate {
+    background: #f4eddf; /* Цвет фона */
+    padding: 10px; /* Поля вокруг текста */
+    white-space: nowrap; /* Текст не переносится */
+    overflow: hidden; /* Обрезаем всё за пределами блока */
+    text-overflow: ellipsis; /* Добавляем многоточие */
+}
+.color_word span {
+    color:rgb(206, 50, 89);
+}
+[data-tooltip] {
+    position: relative; /* Относительное позиционирование */
+}
+[data-tooltip]::after {
+    content: attr(data-tooltip); /* Выводим текст */
+    position: absolute; /* Абсолютное позиционирование */
+    width: 300px; /* Ширина подсказки */
+    left: 0; top: 0; /* Положение подсказки */
+    background: #3989c9; /* Синий цвет фона */
+    color: #fff; /* Цвет текста */
+    padding: 0.5em; /* Поля вокруг текста */
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3); /* Параметры тени */
+    pointer-events: none; /* Подсказка */
+    opacity: 0; /* Подсказка невидима */
+    transition: 0.5s; /* Время появления подсказки */
+}
+[data-tooltip]:hover::after {
+    opacity: 1; /* Показываем подсказку */
+    top: 2em; /* Положение подсказки */
+}
