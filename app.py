@@ -1,10 +1,13 @@
-from flask import Flask, request, render_template, send_from_directory
-# from functions import ...
+from flask import Flask, request, render_template, send_from_directory, url_for
+from main.views import blueprint_main
+from loader.views import blueprint_loader
 
 POST_PATH = "posts.json"
 UPLOAD_FOLDER = "uploads/images"
 
 app = Flask(__name__)
+app.register_blueprint(blueprint_main)
+app.register_blueprint(blueprint_loader)
 
 
 @app.route("/")
@@ -32,5 +35,5 @@ def static_dir(path):
     return send_from_directory("uploads", path)
 
 
-app.run()
-
+if __name__ == "__main__":
+    app.run()
