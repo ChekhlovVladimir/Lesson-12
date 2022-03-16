@@ -18,6 +18,7 @@ def uploaded_page():
     content = request.values.get('content', None)
     pic_path = functions.path_uploaded_pic(picture)
     if not content or not picture:
+        logging.info("Данные внесены не полностью")
         return "Данные внесены не полностью "
 
     try:
