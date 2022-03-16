@@ -1,6 +1,8 @@
+import logging
+
 from flask import Blueprint, render_template, request, flash
 
-ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+import functions
 
 blueprint_loader = Blueprint('blueprint_loader', __name__, template_folder='templates', static_folder='static')
 
@@ -12,12 +14,19 @@ def page_form():
 
 @blueprint_loader.route('/post', methods=['POST'])
 def uploaded_page():
-    picture = request.files.get("picture")
-    content = request.values.get("content")
-    filename = picture.filename
-    extension = filename.split(".")[-1]
-    if extension in ALLOWED_EXTENSIONS:
-        picture.save(f'./uploads/images/{filename}')
-        return render_template('post_uploaded.html', picture=picture, content=content)
+    picture = request.files.get('picture', None)
+    content = request.values.get('content', None)
+    pic_path = functions.path_uploaded_pic(picture)
+    if not content or not picture:
+        return "Данные внесены не полностью "
+
+    try:
+        picture_url = '/' + pic_path
+    except TypeError:
+        logging.info("Ошибка типа")
+        return"Файл не найден. Ошибка типа."
     else:
-        return f"Неподдерживаемый формат файла {extension}"
+        make_post = {'pic': picture_url, 'content': content}
+        functions.post_add_to_json(make_post)
+        logging.info(f'Новый пост добавлен')
+        return render_template('post_uploaded.html', picture=picture_url, content=content)
