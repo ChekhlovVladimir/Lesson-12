@@ -33,11 +33,9 @@ def by_word_search(user_input):
     posts = json_loaded_file()
     lowered_user_input = user_input.lower()
     for post in posts:
-        if lowered_user_input in post["content"].lower().split(", "):
+        if lowered_user_input in post["content"].lower():
             posts_found.append(post)
             return posts_found
-        else:
-            raise TypeError("По запросу ничего не найдено! Повторите ввод с другим значением!")
 
 
 def path_uploaded_pic(picture):
@@ -81,6 +79,3 @@ def post_add_to_json(post):
     posts.append(post)
     post_json_recording(posts)
     return posts
-
-
-print(by_word_search("острова"))

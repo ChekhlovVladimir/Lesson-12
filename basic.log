@@ -1022,3 +1022,68 @@ INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 00:34:26] "GET /search?s=очень HTT
 INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 00:34:26] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
 INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
 INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+ERROR:app:Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Project\lesson12_project_source_v3\main\views.py", line 15, in search_page
+    posts = by_word_search(s)
+  File "C:\Project\lesson12_project_source_v3\functions.py", line 39, in by_word_search
+    raise TypeError("По запросу ничего не найдено! Повторите ввод с другим значением!")
+TypeError: По запросу ничего не найдено! Повторите ввод с другим значением!
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:53:41] "[35m[1mGET /search?s=очень HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:54:02] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:54:02] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+ERROR:app:Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Project\lesson12_project_source_v3\main\views.py", line 15, in search_page
+    posts = by_word_search(s)
+  File "C:\Project\lesson12_project_source_v3\functions.py", line 39, in by_word_search
+    raise TypeError("По запросу ничего не найдено! Повторите ввод с другим значением!")
+TypeError: По запросу ничего не найдено! Повторите ввод с другим значением!
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:54:06] "[35m[1mGET /search?s=кот HTTP/1.1[0m" 500 -
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:56:14] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:56:14] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+ERROR:app:Exception on /search [GET]
+Traceback (most recent call last):
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\DNS\AppData\Local\Programs\Python\Python310\lib\site-packages\flask\app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "C:\Project\lesson12_project_source_v3\main\views.py", line 15, in search_page
+    posts = by_word_search(s)
+  File "C:\Project\lesson12_project_source_v3\functions.py", line 40, in by_word_search
+    raise TypeError("По запросу ничего не найдено! Повторите ввод с другим значением!")
+TypeError: По запросу ничего не найдено! Повторите ввод с другим значением!
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:56:18] "[35m[1mGET /search?s=кот HTTP/1.1[0m" 500 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:56:24] "GET /post HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:56:24] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:56:38] "GET /post HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:56:38] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:56:59] "POST /post HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 14:57:01] "GET /post HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 15:20:10] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 15:20:10] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 15:20:16] "GET /search?s=кот HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [17/Mar/2022 15:20:16] "[36mGET /static/styles/style.css HTTP/1.1[0m" 304 -
